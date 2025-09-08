@@ -165,7 +165,7 @@ const LEVELS = [
         title: 'Nivel 6 — Deixis temporal y espacial',
         q: '¿Qué elemento deíctico completa mejor?: “Nos vemos ___ en ___”.',
         options: [
-            { t: 'mañana / aquí', correct: true, why: 'Deixis temporal (mañana) y espacial (aquí) según el punto de habla.' },
+            { t: 'mañana / casa', correct: true, why: 'Deixis temporal (mañana) y espacial (casa) según el punto de habla.' },
             { t: 'ayer / allí', correct: false, why: '“Ayer” no es futuro coherente con “nos vemos”.' },
             { t: 'siempre / nunca', correct: false, why: 'No son deícticos situacionales concretos.' },
             { t: 'pronto / debajo', correct: false, why: '“Debajo” no señala un lugar de encuentro natural.' }
@@ -406,3 +406,4 @@ $('#btnSaltar').addEventListener('click', () => {
 drawStars();
 renderLevel(0);
 startTimer();
+
