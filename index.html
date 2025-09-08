@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Cohesión — Texto en Acción</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="stars" id="stars"></div>
+    <header>
+        <div class="wrap row">
+            <div class="brand">
+                <div class="logo">🧩</div>
+                <div>
+                    <div>Texto en Acción</div>
+                    <small>Juego de cohesión textual</small>
+                </div>
+            </div>
+            <div class="hud">
+                <div class="chip" id="scoreChip"><span class="dot"></span><b>Puntaje:</b> <span id="score">0</span>
+                </div>
+                <div class="chip" id="levelChip"><span class="dot" style="background:var(--accent)"></span><b>Nivel:</b>
+                    <span id="level">1</span>/8</div>
+                <div class="chip" id="streakChip" data-tip="Respuestas correctas seguidas"><span class="dot"
+                        style="background:var(--success)"></span><b>Racha:</b> <span id="streak">0</span>🔥</div>
+                <div class="chip" id="timeChip"><span class="dot" style="background:var(--warn)"></span><b>Tiempo:</b>
+                    <span id="time">00:00</span></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="grid">
+            <article class="card" id="game">
+                <div class="card-header">
+                    <h2 id="title">Nivel 1 — Referencia anafórica</h2>
+                    <div style="min-width:220px">
+                        <div class="progress"><i id="progressBar" style="width:0%"></i></div>
+                    </div>
+                </div>
+                <div class="card-body" id="content"></div>
+                <div class="footer-actions">
+                    <button class="btn ghost" id="btnReiniciar">↺ Reiniciar</button>
+                    <button class="btn secondary" id="btnPista">💡 Pista</button>
+                    <button class="btn" id="btnSaltar">⏭️ Saltar</button>
+                </div>
+            </article>
+
+            <aside class="card">
+                <div class="card-header">
+                    <h2>Bitácora</h2>
+                    <span class="pill">📘 Conceptos clave</span>
+                </div>
+                <div class="card-body log" id="log">
+                    <div class="entry"><b>¡Bienvenida/o!</b><i>Completa 8 niveles sobre cohesión textual.</i></div>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <canvas class="confetti" id="confetti"></canvas>
+
+    <!-- Templates -->
+    <template id="tpl-mcq">
+        <div class="question"></div>
+        <div class="options"></div>
+    </template>
+
+    <template id="tpl-drag">
+        <div class="question"></div>
+        <div class="drag-zone">
+            <div>
+                <div class="pill" style="margin-bottom:8px">🎯 Arrastra a cada categoría</div>
+                <div class="tokens" id="tokens"></div>
+            </div>
+            <div id="drops" style="display:grid; gap:12px"></div>
+        </div>
+    </template>
+
+    <template id="tpl-hangman">
+        <div class="question" style="margin-bottom:8px"></div>
+        <div class="hangman">
+            <div class="word" id="hmWord">_ _ _ _</div>
+            <div class="letters" id="hmLetters"></div>
+        </div>
+    </template>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
